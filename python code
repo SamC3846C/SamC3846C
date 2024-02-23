@@ -1,0 +1,166 @@
+import numpy as np # for array type operations numpy functions works faster than list functions
+print(" ")
+# This program illustrates a menu driven program on matrix operations
+# The following are the operations to be performed:~
+# add,sub,multiply,div,transpose,
+# dot product
+# inverse,left diagonal,right diagonal
+#----------------------------------------------------------------------------------------------
+
+def userinput(promt):  # this function takes input from the user
+    m = int(input("Enter the number of rows"))
+    n = int(input("Enter the number of colums"))
+    list = []
+    for i in range(m):
+        list1 = []
+        for j in range(n):
+            e = int(input("Enter values"))
+            list1.append(e)
+        list.append(list1)
+    return np.array(list)
+
+def addition():# 2
+        print("Enter the first matix")
+        print(" ")
+        user=userinput("Enter the first matrix")
+        print("Enter the second matrix")
+        print(" ")
+        user2=userinput("Enter the second matrix")
+        if (len(user) == len(user2)):
+            sumation=np.add(user,user2)
+            print(sumation)
+        else:
+            print("len mismatch")
+        return
+
+def subtraction():# 3
+    print("Enter the first matix")
+    print(" ")
+    matrix1 = userinput("Enter the first matrix:")
+    print(" ")
+    print("Enter the second matrix")
+    matrix2 = userinput("Enter the second matrix:")
+    if (len(matrix1) == len(matrix2)):
+     result = np.subtract(matrix1, matrix2)
+     print("Result of subtraction:")
+     print(result)
+    else:
+        print("len mismatch")
+
+def multiplication(): # 4
+    print("Enter the first matix")
+    print(" ")
+    matrix1 = userinput("Enter the first matrix:")
+    print("Enter the second matrix")
+    print(" ")
+    matrix2 = userinput("Enter the second matrix:")
+    if (len(matrix1)==len(matrix2)):
+        result = np.multiply(matrix1, matrix2)
+        print("Result of multiplication:")
+        print(result)
+    else:
+        print("len mismatch")
+
+
+def dot_product():# 5
+    print("Enter the first matix")
+    print(" ")
+    matrix1 = userinput("Enter the first matrix:")
+    print("Enter the second matrix")
+    print(" ")
+    matrix2 = userinput("Enter the second matrix:")
+    result = np.dot(matrix1, matrix2)
+    print("Result of multiplication:")
+    print(result)
+
+
+def division():# 6
+    print("Enter the first matix")
+    print(" ")
+    matrix1 = userinput("Enter the first matrix:")
+    print("Enter the second matrix")
+    print(" ")
+    matrix2 = userinput("Enter the second matrix:")
+    result = np.divide(matrix1, matrix2)
+    print("Result of multiplication:")
+    print(result)
+
+def transpose_operation():# 7
+    print("Enter the matrix of your choice ")
+    print(" ")
+    matrix = userinput("Enter the matrix:")
+    result = np.transpose(matrix)
+    print("Result of transpose:")
+    print(result)
+def left_diagonal():#8
+    print("Enter the matrix of your choice ")
+    print(" ")
+    matrix = userinput("Enter the matrix:")
+    diagonal_elements = []
+    for i in range(len(matrix)):
+        diagonal_elements.append(matrix[i][i])
+    print("the left diagonals are",diagonal_elements)
+def right_diagonal():#9
+    print("Enter the matrix of your choice ")
+    print(" ")
+    matrix = userinput("Enter the matrix:")
+    right_diagonal = np.diagonal(np.fliplr(matrix))
+    print("Right diagonal:", right_diagonal)
+def inverse():#10
+    print("Enter the matrix of your choice ")
+    print(" ")
+    matrix = userinput("Enter the matrix:")
+    # Find the inverse using numpy.linalg.inv()
+    inverse_matrix = np.linalg.inv(matrix)
+    print("Original Matrix:")
+    print(matrix)
+    print("\nInverse Matrix:")
+    print(inverse_matrix)
+
+
+if __name__ == '__main__':
+    print('''#This program illustrates a menu driven program on matrix operations
+# The following are the operations to be performed:~
+# add,sub,multiply,div,transpose,
+# dot product,scalar matrix,
+# inverse,left diagonal,right diagonal
+please read the instructions carefully to ensure a smooth experience...''')
+
+    while True:
+        print("\nMatrix Operations are as follows:-")
+        print("Press 1 to perform Addtion of Matrices")
+        print("Press 2 to perform Subtraction of Matrices")
+        print("Press 3 to perform Multiplication of  Matrices")
+        print("Press 4 to perform Transpose of Matrices")
+        print("Press 5 to perform dot product of Matrices")
+        print("Press 6 to perform division of Matrices")
+        print("Press 7 to find left diagonal of a Matrix")
+        print("Press 8 to find right diagonal of a Matrix")
+        print("Press 9 to find inverse of a Matrix")
+        print("Press 10 to End / Exit from the program...............")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            addition()
+        elif choice == '2':
+            subtraction()
+        elif choice == '3':
+            multiplication()
+        elif choice == '4':
+            transpose_operation()
+        elif choice == '5':
+            dot_product()
+        elif choice == '6':
+            division()
+        elif choice == '7':
+            left_diagonal()
+        elif choice == '8':
+            right_diagonal()
+        elif choice == '9':
+            inverse()
+        elif choice == '10':
+            print("Exited........!!!!!!")
+            print(exit(1))
+        else:
+            print("Invalid choice. Please enter a number as per menu.")
