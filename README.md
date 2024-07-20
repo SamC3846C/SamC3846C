@@ -1,4 +1,4 @@
-<h2 align="left">Hi 👋! My name is Souradeep and I'm a Web developer by heart and wanna be a UI&Ux designer by Professiom from INDIA</h2>
+<h2 align="left">Hi 👋! My name is Souradeep I am passionate about cloud technology and DevOps, driven by the potential these fields offer to transform and optimize IT infrastructure. My interest lies in leveraging cloud platforms to build scalable, reliable, and cost-effective solutions. I am particularly drawn to the automation and continuous integration/continuous deployment (CI/CD) pipelines that DevOps principles promote, enabling faster and more efficient software delivery. By exploring the latest advancements in cloud computing and implementing best practices in DevOps, I aim to contribute to creating robust systems that enhance productivity and drive innovation.</h2>
 
 ###
 
